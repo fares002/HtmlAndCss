@@ -94,9 +94,7 @@ header .links{
     position: relative;
 }
 
-header .links:hover .icon span:nth-child(2){
-   width: 100%;
-}
+
 
 header .links .icon{
     width: 30px;
@@ -115,6 +113,10 @@ header .links .icon span:nth-child(2){
     width: 60%;
     transition: .3s;
 }
+
+header .links:hover .icon span:nth-child(2){
+    width: 100%;
+ }
 
 
 header .links ul{
