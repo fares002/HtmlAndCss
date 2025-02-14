@@ -1,0 +1,483 @@
+/* Start globel rules */
+
+:root{
+    --mainColor:#2196f3;
+    --mainPadding:100px;
+    --sectionBackground:#ececec;
+    --mainTranstion:.3s
+
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Cairo", sans-serif;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (min-width:768px) {
+    .container{
+        width:750px
+    }
+    
+}
+@media (min-width:992px) {
+    .container{
+        width: 970px;
+    }
+    
+}
+@media (min-width:1200px) {
+    .container{
+        width:1170px
+    }
+    
+}
+
+a{
+    text-decoration: none;
+}
+/* end Globel roles */
+
+header{
+    background-color: white;
+    box-shadow: 2px #ccc;
+}
+
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+@media (max-width:768px) {
+    header .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+
+header .container .main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .main-nav>li>a{
+    padding: 0 30px;
+    font-size: 18px;
+    display: block;
+    height: 76px;
+    align-content: center;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+header .container .main-nav>li>a:hover::before{
+    right: 0;
+
+}
+header .container .main-nav>li>a::before{
+    content: "";
+    background-color: var(--mainColor);
+    width: 100%;
+    height: 5px;
+    top: 0;
+    right: 100%;
+    position: absolute;
+    transition: var(--mainTranstion);
+
+}
+
+header .container .main-nav li a:hover{
+    color: var(--mainColor);
+    background-color: #fafafa;
+}
+
+
+header .container>a{
+    font-size: 26px;
+    text-decoration: none;
+    font-weight: 800;
+    color: var(--mainColor);
+}
+
+
+header .container .main-nav  li:hover:last-of-type  .meaga-menu
+{
+    opacity: 1;
+    top:77px;
+    z-index:30;
+}
+
+.meaga-menu{
+    position: absolute;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    top:126px;
+    border-bottom: 3px solid var(--mainColor);
+    transition: top .3s, opacity .3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+
+.meaga-menu ul{
+    flex-basis: 20%;
+}
+
+@media (max-width:991px) {
+    .meaga-menu{
+        flex-wrap: wrap;
+    }
+    .meaga-menu .image{
+        display: none;
+    }
+    .meaga-menu ul{
+        flex-basis: 45%;
+    }
+    .meaga-menu ul li a{
+        width: 90%;
+    }
+    
+}
+
+@media (max-width:768px){
+    .meaga-menu ul{
+        flex-basis: 90%;
+    }
+}
+
+.meaga-menu ul li{
+    padding:20px;
+    color: var(--main);
+}
+
+
+.meaga-menu ul li{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.meaga-menu ul li a{
+    color: var(--mainColor);
+    font-weight: bold;
+}
+
+
+.meaga-menu ul li a > i{
+    padding-right: 20px;
+}
+
+
+/* End Header */
+
+/* Start Landing */
+.landing::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -40px;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec;
+    z-index: -1;
+    transform: skewY(-6deg);
+    transform-origin: top left;
+}
+
+
+.landing .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    height: calc(100vh - 74px);
+    padding-bottom: 120px;
+    position: relative;
+}
+
+.landing .container .landing-text h1{
+    font-size: 40px;
+    letter-spacing: -2px;
+}
+
+.landing .container .landing-text p{
+    font-size: 23px;
+    line-height: 1.7;
+    margin: 5px 0 0;
+    color: #666;
+    max-width: 500px;
+}
+
+
+.landing-image img
+{ 
+    position: relative;
+    width: 600px;
+    animation:up-and-down 4s linear infinite;
+    animation-direction: alternate;
+
+}
+
+@media (max-width:991px) {
+    .landing-image img{
+        display: none;
+    }
+    
+}
+
+
+@keyframes up-and-down{
+    to{
+        transform: translateY(-20px);
+    }
+    
+}
+
+
+.landing .container .go-down i{
+    position: absolute;
+    bottom: 40px;
+    right: 50%;
+    color: var(--mainColor);
+    animation: bouncing 1.5s linear infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes bouncing {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    75%{
+        transform: translateY(-10px);
+    }
+    85%{
+        transform: translateY(0px);
+    }
+}
+
+
+.article{
+    padding-top: var(--mainPadding);
+    padding-bottom: var(--mainPadding);
+}
+
+.main-heading{
+    border: 3px solid black;
+    width: fit-content;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 0 auto 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.main-heading::before{
+    content: "";
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -30px;
+}
+.main-heading::after{
+    content: "";
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -30px;
+}
+
+
+.main-heading:hover::before{
+    position: absolute;
+    left: 0;
+    border-radius: 0;
+    color: var(--mainColor);
+    z-index: -2;
+    width: 55%;
+    height: 100%;
+    transition: .5s;
+}
+
+
+.main-heading:hover::after{
+    position: absolute;
+    right: 0;
+    border-radius: 0;
+    color: var(--mainColor);
+    z-index: -2;
+    width: 50%;
+    height: 100%;
+    transition: .5s;
+}
+
+.main-heading:hover{
+    color: white;
+    border: 3px transparent solid;
+    transition-delay: .5s;
+}
+
+
+/* Start Aritcle */
+.article-card img{
+    border-radius:  3% 3% 0 0;
+    max-width: 100%;
+}
+
+
+.article .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px
+}
+
+.article .container .article-card{
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    transition: .3s;
+    border-radius: 0 0 3% 3%;
+}
+
+
+.article .container .article-card .card-content{
+    padding: 20px;
+}
+
+.article .container .article-card .card-content p{
+    color: #777;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.article .container .article-card .info{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: var(--mainColor);
+    border-top: 1px solid #e6e6e7;
+    position: relative;
+}
+
+.article .container .article-card .info a{
+    color: var(--mainColor);
+}
+
+
+.article .container .article-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgb(0 0 0 / 20%);
+}
+
+.article .container .article-card:hover .info i{
+    position: absolute;
+    right: 15px;
+    animation: see-more alternate-reverse .7s infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes see-more {
+
+    to{
+        right: 5px;
+    }
+    
+}
+
+/* End article */
+
+/* Staet gallery */
+.gallery{
+    padding-top: var(--mainPadding);
+    padding-bottom: var(--mainPadding);
+    position: relative;
+    background-color: #ececec;
+}
+
+.spikes{
+    position: relative;
+}
+
+.spikes::before{
+    content: "";
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    position: absolute;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+    background-size: 30px ;
+}
+
+.gallery .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+
+.gallery .container .gallery-image{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+    overflow: hidden;
+}
+
+.gallery .container .gallery-image img{
+    max-width: 100%;
+    max-height: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .container .gallery-image img:hover{
+    transform: scale(1.1) rotate(3deg);
+    transition: 0.3s;
+}
